@@ -1,35 +1,35 @@
 import random
 
+def performLogin():
+	Попытки1 = 2
+	while True:
+		Login = input("Введите ваш логин: ")
+		if (Login == "vuk") or (Login == "Валерий") or (Login == "sas"):
+			print("Логин Классифицирован. Здраствуйте, Валерий!\n")
+			break
+		elif (Login == "auk") or (Login == "Алексей"):
+			print("Логин Классифицирован. Здраствуйте, Алексей!\n")
+			break
+		elif (Login == "sas") or (Login == "SasAnanas") or (Login == "Елена"):
+			print("Логин Классифицирован. Здраствуйте, Елена!\n")	
+		else:
+			print("Неверная попытка! Осталось", Попытки1, "попыток\n")
+
+		Попытки1 -= 1
+		if Попытки1 < 0:
+			print("Обновите сессию и попробуйте снова\n")
+			raise SystemExit
+
+	while True:
+		Password = input("Введите пароль, " + Login + ": \n")
+		if (Password == "LolHero") or (Password == "1"):
+			print("Доступ разрешен. Здраствуйте, " + Login + ": \n") 
+			break
+		else:
+			print("Неверный пароль\n")
+
 print("Здраствуйте, я АББ!\n")
-
-Попытки1 = 2
-while True:
-	Login = input("Введите ваш логин: ")
-	if (Login == "vuk") or (Login == "Валерий") or (Login == "sas"):
-		print("Логин Классифицирован. Здраствуйте, Валерий!\n")
-		break
-	elif (Login == "auk") or (Login == "Алексей"):
-		print("Логин Классифицирован. Здраствуйте, Алексей!\n")
-		break
-	elif (Login == "sas") or (Login == "SasAnanas") or (Login == "Елена"):
-		print("Логин Классифицирован. Здраствуйте, Елена!\n")	
-	else:
-		print("Неверная попытка! Осталось", Попытки1, "попыток\n")
-
-	Попытки1 -= 1
-	if Попытки1 < 0:
-		print("Обновите сессию и попробуйте снова\n")
-		raise SystemExit
-		break
-
-while True:
-	Password = input("Введите пароль, " + Login + ": \n")
-	if (Password == "LolHero") or (Password == "1"):
-		print("Доступ разрешен. Здраствуйте, " + Login + ": \n") 
-		Command = input("Выберите функцию, " + Login + ": \n")
-		break
-	else:
-		print("Неверный пароль\n")
+performLogin()
 
 pravda = True
 while pravda:
@@ -37,6 +37,8 @@ while pravda:
      joke = random.randint(1,3)
      Coin = random.randint(1,3)
      Sovet = random.randint(1,3)	
+
+     Command = input("Выберите функцию, " + Login + ": \n")
 
      if joke == 1 and (Command == "Пошути") or joke == 1 and (Command == "пошути") or joke == 1 and (Command == "Расскажи анекдот") or joke == 1 and (Command == "расскажи анекдот"):
      	print("Сколько бы Ярик не учил русский всё равно получается ку-ка-ре-ку\n") and str(print(joke))
